@@ -2,6 +2,11 @@
 
 public class FileName
 {
+    /// <summary>
+    /// Sets any prefix to the filename.  If set, the
+    /// prefix and rootname are separated by the Separator
+    /// variable.
+    /// </summary>
     public string Prefix { get; init; } = string.Empty;
     public string RootName { get; init; } = string.Empty;
     public string Suffix { get; init; } = string.Empty;

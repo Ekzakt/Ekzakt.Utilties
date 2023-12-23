@@ -10,4 +10,10 @@
     <ProjectReference Include="..\Ekzakt.Core\Ekzakt.Core.csproj" />
   </ItemGroup>
 
+  <!-- For Nuget -->
+  <PropertyGroup>
+    <!--<EnablePackageValidation>true</EnablePackageValidation>-->
+    <!--<PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion>-->
+  </PropertyGroup>
+	
 </Project>
