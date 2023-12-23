@@ -1,6 +1,6 @@
 ﻿namespace Ekzakt.Core.Files.FileNameFactory;
 
-public class FileNameFactory() : IFileNameFactory
+public class FileNameFactory : IFileNameFactory
 {
     public CreateFileNameResult CreateFileName(string originalFileName, string contentType, Action<FileNameFactoryOptions>? options = null)
     {

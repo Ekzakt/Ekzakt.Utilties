@@ -7,6 +7,7 @@ public class StringHelpers
     public const string CHARS_ALPHABETIC_LOWER = "abcdefghijklmnopqrstuvwxyz";
     public const string CHARS_ALPHANUMERIC = $"{CHARS_ALPHABETIC_LOWER}{CHARS_ALPHABETIC_UPPER}{CHARS_NUMERIC}";
 
+
     public static string GetAlphanumericString(int maxLength)
     {
         int minLength = 1;
@@ -17,8 +18,8 @@ public class StringHelpers
 
     public static string GetAlphanumericString(int minLength, int maxLength)
     {
-        if (minLength < 0) { minLength = 1; }
-        if (maxLength < 0) { maxLength = 1; }
+        minLength = minLength < 1 ? 1 : minLength;
+        maxLength = minLength < 1 ? 1 : maxLength;
 
         if (minLength > maxLength)
         {

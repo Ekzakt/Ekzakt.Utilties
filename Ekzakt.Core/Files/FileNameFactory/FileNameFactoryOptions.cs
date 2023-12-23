@@ -2,7 +2,7 @@
 
 public class FileNameFactoryOptions
 {
-    public MimeType[] PermittedMimeTypes { get; set; } = [];
+    public MimeType[] PermittedMimeTypes { get; set; } = Array.Empty<MimeType>();
     public string Prefix { get; set; } = string.Empty;
     public string Suffix { get; set; } = string.Empty;
     public bool DoNotUseGuidAsRootName { get; set; }
