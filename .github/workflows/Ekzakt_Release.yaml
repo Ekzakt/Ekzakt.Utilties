@@ -77,6 +77,11 @@ jobs:
       uses: actions/setup-dotnet@v4
     - name: Run tests
       run: dotnet test --configuration Release
+    - name: Explain why this job ran
+      uses: octo-org/action-name@main
+      with:
+        entrypoint: /bin/echo
+        args: The ${{ github.event_name }} event triggered this step.
 
   deploy:
     # Publish only when creating a GitHub Release
