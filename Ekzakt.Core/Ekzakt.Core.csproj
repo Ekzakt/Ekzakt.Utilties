@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Authors>E. Jansen</Authors>
     <Company>Ekzakt</Company>
-
+	  <Version>0.0.0</Version>
 
 	  <Description>A long description to explain the package</Description>
 
