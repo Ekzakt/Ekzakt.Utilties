@@ -2,6 +2,11 @@
 
 public class ArrayHelpers
 {
+    /// <summary>
+    /// Gets a random string from an array of strings.
+    /// </summary>
+    /// <param name="values"></param>
+    /// <returns>string</returns>
     public static string GetRandom(string[] values)
     {
         if (!values.Any())
