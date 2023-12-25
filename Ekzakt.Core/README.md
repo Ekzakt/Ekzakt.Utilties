@@ -1,1 +1,0 @@
-﻿Ekzakt.Core READMe.md file.
