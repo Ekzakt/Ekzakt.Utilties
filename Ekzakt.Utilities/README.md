@@ -1,1 +1,1 @@
-﻿Ekzakt.Utilities
+﻿Package with helper classes and extension methods for Ekzakt.
