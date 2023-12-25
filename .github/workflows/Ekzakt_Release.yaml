@@ -77,9 +77,6 @@ jobs:
       uses: actions/setup-dotnet@v4
     - name: Run tests
       run: dotnet test --configuration Release
-    - name: Explain why this job ran
-      - bash: |
-        echo github.event_name
 
   deploy:
     # Publish only when creating a GitHub Release
