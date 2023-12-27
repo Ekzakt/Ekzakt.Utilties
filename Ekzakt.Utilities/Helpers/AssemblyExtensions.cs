@@ -4,6 +4,7 @@ namespace Ekzakt.Utilities.Helpers;
 
 public static class AssemblyExtentions
 {
+    [Obsolete("Use VersionExtensions instead.")]
     public static string? GetVersionFormattedString(this Assembly assembly)
     {
         var buildVersion = assembly.GetName().Version;
