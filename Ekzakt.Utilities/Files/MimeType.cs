@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.Core.Files;
+﻿namespace Ekzakt.Utilities.Files;
 
 public class MimeType
 {

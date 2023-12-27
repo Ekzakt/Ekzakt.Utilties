@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.Core.Files.FileNameFactory;
+﻿namespace Ekzakt.Utilities.Files.FileNameFactory;
 
 public class FileNameFactoryOptions
 {

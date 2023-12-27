@@ -1,6 +1,6 @@
-﻿using Ekzakt.Core.Contracts;
+﻿using Ekzakt.Utilities.Contracts;
 
-namespace Ekzakt.Core.Files.FileNameFactory;
+namespace Ekzakt.Utilities.Files.FileNameFactory;
 
 public class CreateFileNameResult : ResultBase
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Ekzakt.Core.Helpers;
+namespace Ekzakt.Utilities.Helpers;
 
 public class FileHelpers
 {

@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.Core.Helpers;
+﻿namespace Ekzakt.Utilities.Helpers;
 
 public static class StreamHelpers
 {

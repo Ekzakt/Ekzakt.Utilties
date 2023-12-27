@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.Core.Contracts;
+﻿namespace Ekzakt.Utilities.Contracts;
 
 public abstract class ResultBase
 {
