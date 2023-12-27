@@ -62,7 +62,6 @@ public class FileName
     }
 
 
-
     #region Helpers
 
     private void ValidateProperties(string rootName, string extension)
