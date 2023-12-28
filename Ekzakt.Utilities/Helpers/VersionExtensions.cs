@@ -10,7 +10,7 @@ public static class VersionExtensions
     /// <returns>string</returns>
     public static string Format(this Version? version)
     {
-        var revision = version?.Revision == 0 ? $".{version?.Revision}" : string.Empty;
+        var revision = version?.Revision == 0 ? string.Empty : $".{version?.Revision}";
 
         return $"{version?.Major}.{version?.Minor}.{version?.Build}{revision}";
     }
