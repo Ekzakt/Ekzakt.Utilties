@@ -4,6 +4,8 @@ public static class VersionExtensions
 {
     public static string Format(this Version? version)
     {
-        return $"{version?.Major}.{version?.Minor}.{version?.Build}.{version?.Revision}";
+        var revision = version?.Revision == 0 ? $".{version?.Revision}" : string.Empty;
+
+        return $"{version?.Major}.{version?.Minor}.{version?.Build}{revision}";
     }
 }
