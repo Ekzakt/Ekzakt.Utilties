@@ -11,8 +11,8 @@ public static class VersionExtensions
     /// <returns>string</returns>
     public static string Format(this Version? version, string? prefix = "")
     {
-        var revision = version?.Revision == 0 ? string.Empty : $".{version?.Revision}";
+        var revision = version?.Revision == 0 ? string.Empty : $"{version?.Revision}.";
 
-        return $"{prefix?.Trim()} {version?.Major}.{version?.Minor}.{version?.Build}{revision}".Trim();
+        return $"{prefix}{version?.Major}.{version?.Minor}.{version?.Build}.{revision}".Trim();
     }
 }
