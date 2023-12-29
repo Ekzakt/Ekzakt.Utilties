@@ -2,7 +2,7 @@
 Package with helper classes and extension methods for the Ekzakt ecosystem.
 
 ## Installation
-Use the NuGet package manager and search for Ekzakt.Utilities, or use the dotnet CLI:
+Use the NuGet Package Manager and search for Ekzakt.Utilities, or use the dotnet CLI:
 
 ``` C#
 dotnet add package Ekzakt.Utilities
