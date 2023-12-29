@@ -13,6 +13,6 @@ public static class VersionExtensions
     {
         var revision = version?.Revision <= 0 ? string.Empty : $"{version?.Revision}.";
 
-        return $"{prefix}{version?.Major}.{version?.Minor}.{version?.Build}.{revision}".Trim();
+        return $"{prefix}{version?.Major}.{version?.Minor}.{version?.Build}.{revision}".Trim().TrimEnd('.');
     }
 }

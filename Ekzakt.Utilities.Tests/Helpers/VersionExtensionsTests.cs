@@ -12,7 +12,7 @@ namespace Ekzakt.Utilities.Helpers.Tests
 
             var result = version.Format();
 
-            Assert.AreEqual("1.2.3.", result);
+            Assert.AreEqual("1.2.3", result);
         }
 
 
@@ -23,7 +23,7 @@ namespace Ekzakt.Utilities.Helpers.Tests
 
             var result = version.Format("v");
 
-            Assert.AreEqual("v1.2.3.", result);
+            Assert.AreEqual("v1.2.3", result);
         }
 
 
@@ -34,7 +34,7 @@ namespace Ekzakt.Utilities.Helpers.Tests
 
             var result = version.Format();
 
-            Assert.AreEqual("1.2.3.1.", result);
+            Assert.AreEqual("1.2.3.1", result);
         }
 
 
@@ -45,7 +45,7 @@ namespace Ekzakt.Utilities.Helpers.Tests
 
             var result = version.Format("v ");
 
-            Assert.AreEqual("v 1.2.3.1.", result);
+            Assert.AreEqual("v 1.2.3.1", result);
         }
     }
 }
