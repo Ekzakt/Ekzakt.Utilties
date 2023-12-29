@@ -37,6 +37,7 @@ namespace Ekzakt.Utilities.Helpers.Tests
             Assert.AreEqual("1.2.3.1.", result);
         }
 
+
         [TestMethod()]
         public void Format_RevisionIsNotZeroAndPrefix()
         {
