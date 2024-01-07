@@ -4,7 +4,7 @@ namespace Ekzakt.Utilities.Helpers;
 
 public class FileHelpers
 {
-    public static string ConvertToSaveRootName(string fileName)
+    public static string ConvertToSafeRootName(string fileName)
     {
         var safeName = Path.GetFileNameWithoutExtension(fileName);
 

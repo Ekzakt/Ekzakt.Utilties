@@ -67,7 +67,7 @@ public class FileNameFactory : IFileNameFactory
 
         return !doNotUseGuid
             ? Guid.NewGuid().ToString().ToLower()
-            : Helpers.FileHelpers.ConvertToSaveRootName(fileName);
+            : Helpers.FileHelpers.ConvertToSafeRootName(fileName);
     }
 
 
