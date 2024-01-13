@@ -1,0 +1,129 @@
+﻿using Ekzakt.EmailSender.Contracts;
+using Ekzakt.EmailSender.Models;
+using Microsoft.Extensions.Logging;
+using MimeKit;
+using MailKit.Net.Smtp;
+using Ekzakt.EmailSender.Configuration;
+using Microsoft.Extensions.Configuration;
+
+namespace Ekzakt.EmailSender;
+
+public class SmtpEmailSenderService(
+    ILogger<SmtpEmailSenderService> logger, 
+    IConfiguration configuration) : IEmailSenderService
+{
+    private readonly ILogger<SmtpEmailSenderService> _logger = logger;
+    private SmtpSenderOptions _smtpSenderOptions;
+    private SendEmailRequest _sendEmailRequest = new();
+
+
+    public async Task SendAsync(SendEmailRequest sendRequest, Action<SmtpSenderOptions>? options = null)
+    {
+        if (sendRequest is null)
+        {
+            throw new ArgumentNullException(nameof(SendEmailRequest));
+        }
+
+        if (options is not null)
+        {
+            options(_smtpSenderOptions);
+        }
+        
+        _sendEmailRequest = sendRequest;
+
+        await SendAsync();
+    }
+
+
+
+
+    #region Helpers
+
+    private async Task SendAsync()
+    {
+        MimeMessage mimeMessage = BuildMimeMessage();
+
+        using var smtp = new SmtpClient();
+
+        await smtp.ConnectAsync(
+            _smtpSenderOptions.Host, 
+            _smtpSenderOptions.Port
+        );
+
+        await smtp.AuthenticateAsync(
+            _smtpSenderOptions.UserName, 
+            _smtpSenderOptions.Password
+        );
+
+        await smtp.SendAsync(mimeMessage);
+
+        await smtp.DisconnectAsync(true);
+    }
+
+
+    private MimeMessage BuildMimeMessage()
+    {
+        MimeMessage mimeMessage = new();
+
+        mimeMessage.Sender = new MailboxAddress(
+                _sendEmailRequest?.From?.Name ?? _smtpSenderOptions.FromDisplayName,
+                _sendEmailRequest?.From?.Address ?? _smtpSenderOptions.FromAddress);
+
+        mimeMessage.Subject = GetEmailSubject(_sendEmailRequest?.Subject);
+
+        mimeMessage.To.AddRange(ConvertFromEmailAdressList(_sendEmailRequest.To));
+        mimeMessage.Cc.AddRange(ConvertFromEmailAdressList(_sendEmailRequest.Cc));
+        mimeMessage.Bcc.AddRange(ConvertFromEmailAdressList(_sendEmailRequest.Bcc));
+
+        mimeMessage.Body = BuildBody();
+
+        return mimeMessage;
+    }
+
+
+    private MimeEntity BuildBody()
+    {
+        if (string.IsNullOrEmpty(_sendEmailRequest.HtmlBody))
+        {
+            throw new ArgumentNullException(nameof(BodyBuilder.HtmlBody));
+        }
+
+        BodyBuilder bodyBuilder = new();
+
+        bodyBuilder.HtmlBody = _sendEmailRequest.HtmlBody;
+        bodyBuilder.TextBody = _sendEmailRequest.TextBody ?? string.Empty;
+
+        return bodyBuilder.ToMessageBody();
+    }
+
+
+    private InternetAddressList ConvertFromEmailAdressList(List<EmailAddress> emailAddresses)
+    {
+        InternetAddressList addressesList = new();
+
+        foreach (var emailAddress in emailAddresses)
+        {
+            addressesList.Add(new MailboxAddress(emailAddress.Name, emailAddress.Address));
+        }
+
+        return addressesList;
+    }
+
+
+    private string? GetEmailSubject(string? subject)
+    {
+        bool isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
+
+        if (isDevelopment)
+        {
+            return $"*** DEV {subject} ***";
+        }
+        else
+        {
+            return subject;
+        }
+    }
+
+
+    #endregion Helpers
+}
