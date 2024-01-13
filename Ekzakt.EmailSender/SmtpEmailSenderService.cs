@@ -12,8 +12,9 @@ public class SmtpEmailSenderService(
     ILogger<SmtpEmailSenderService> logger, 
     IConfiguration configuration) : IEmailSenderService
 {
+
     private readonly ILogger<SmtpEmailSenderService> _logger = logger;
-    private SmtpSenderOptions _smtpSenderOptions;
+    private SmtpSenderOptions _options;
     private SendEmailRequest _sendEmailRequest = new();
 
 
@@ -26,7 +27,7 @@ public class SmtpEmailSenderService(
 
         if (options is not null)
         {
-            options(_smtpSenderOptions);
+            options(_options);
         }
         
         _sendEmailRequest = sendRequest;
@@ -46,13 +47,13 @@ public class SmtpEmailSenderService(
         using var smtp = new SmtpClient();
 
         await smtp.ConnectAsync(
-            _smtpSenderOptions.Host, 
-            _smtpSenderOptions.Port
+            _options.Host, 
+            _options.Port
         );
 
         await smtp.AuthenticateAsync(
-            _smtpSenderOptions.UserName, 
-            _smtpSenderOptions.Password
+            _options.UserName, 
+            _options.Password
         );
 
         await smtp.SendAsync(mimeMessage);
@@ -66,14 +67,14 @@ public class SmtpEmailSenderService(
         MimeMessage mimeMessage = new();
 
         mimeMessage.Sender = new MailboxAddress(
-                _sendEmailRequest?.From?.Name ?? _smtpSenderOptions.FromDisplayName,
-                _sendEmailRequest?.From?.Address ?? _smtpSenderOptions.FromAddress);
+                _sendEmailRequest?.From?.Name ?? _options.FromDisplayName,
+                _sendEmailRequest?.From?.Address ?? _options.FromAddress);
 
         mimeMessage.Subject = GetEmailSubject(_sendEmailRequest?.Subject);
 
-        mimeMessage.To.AddRange(ConvertFromEmailAdressList(_sendEmailRequest.To));
-        mimeMessage.Cc.AddRange(ConvertFromEmailAdressList(_sendEmailRequest.Cc));
-        mimeMessage.Bcc.AddRange(ConvertFromEmailAdressList(_sendEmailRequest.Bcc));
+        mimeMessage.To.AddRange(ConvertFromEmailAddressList(_sendEmailRequest.To));
+        mimeMessage.Cc.AddRange(ConvertFromEmailAddressList(_sendEmailRequest.Cc));
+        mimeMessage.Bcc.AddRange(ConvertFromEmailAddressList(_sendEmailRequest.Bcc));
 
         mimeMessage.Body = BuildBody();
 
@@ -97,7 +98,7 @@ public class SmtpEmailSenderService(
     }
 
 
-    private InternetAddressList ConvertFromEmailAdressList(List<EmailAddress> emailAddresses)
+    private InternetAddressList ConvertFromEmailAddressList(List<EmailAddress> emailAddresses)
     {
         InternetAddressList addressesList = new();
 
