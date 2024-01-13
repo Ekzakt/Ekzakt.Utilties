@@ -18,7 +18,7 @@ public class SmtpEmailSenderService(
     private SendEmailRequest _sendEmailRequest = new();
 
 
-    public async Task SendAsync(SendEmailRequest sendRequest, Action<SmtpSenderOptions>? options = null)
+    public async Task SendAsync(SendEmailRequest sendRequest, Action<IEmailSenderOptions>? options = null)
     {
         if (sendRequest is null)
         {
