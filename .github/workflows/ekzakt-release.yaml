@@ -34,7 +34,10 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
 
-    - name: Update Build Number
+    - name: Update Build Number Ekzakt.Utilities
+      run: sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Ekzakt.Utilities/Ekzakt.Utilities.csproj
+      
+    - name: Update Build Number Ekzakt.Utilities
       run: sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Ekzakt.Utilities/Ekzakt.Utilities.csproj
 
     # Create the NuGet package in the folder from the environment variable NuGetDirectory

@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.EmailSender.Configuration;
+﻿namespace Ekzakt.EmailSender.Smtp.Configuration;
 
 public class SmtpSenderOptions
 {

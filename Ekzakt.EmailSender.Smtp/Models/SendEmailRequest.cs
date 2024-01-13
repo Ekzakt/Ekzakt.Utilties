@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.EmailSender.Models
+﻿namespace Ekzakt.EmailSender.Smtp.Models
 {
     public class SendEmailRequest
     {

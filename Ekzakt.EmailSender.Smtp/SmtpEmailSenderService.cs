@@ -1,12 +1,12 @@
-﻿using Ekzakt.EmailSender.Contracts;
-using Ekzakt.EmailSender.Models;
+﻿using Ekzakt.EmailSender.Smtp.Contracts;
+using Ekzakt.EmailSender.Smtp.Models;
 using Microsoft.Extensions.Logging;
 using MimeKit;
 using MailKit.Net.Smtp;
-using Ekzakt.EmailSender.Configuration;
+using Ekzakt.EmailSender.Smtp.Configuration;
 using Microsoft.Extensions.Configuration;
 
-namespace Ekzakt.EmailSender;
+namespace Ekzakt.EmailSender.Smtp;
 
 public class SmtpEmailSenderService(
     ILogger<SmtpEmailSenderService> logger, 

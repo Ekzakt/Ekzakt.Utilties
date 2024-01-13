@@ -1,7 +1,7 @@
-﻿using Ekzakt.EmailSender.Configuration;
-using Ekzakt.EmailSender.Models;
+﻿using Ekzakt.EmailSender.Smtp.Configuration;
+using Ekzakt.EmailSender.Smtp.Models;
 
-namespace Ekzakt.EmailSender.Contracts;
+namespace Ekzakt.EmailSender.Smtp.Contracts;
 
 public interface IEmailSenderService
 {
