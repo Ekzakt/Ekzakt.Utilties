@@ -41,15 +41,12 @@ jobs:
       run: sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Ekzakt.EmailSender.Smtp/Ekzakt.EmailSender.Smtp.csproj
 
     # Create the NuGet packages in the folder from the environment variable NuGetDirectory
-    #- name: Create NuGet package for Ekzakt.Utilities.csproj
-    #  run: dotnet pack ./Ekzakt.Utilities/Ekzakt.Utilities.csproj --configuration Release --output ${{ env.NuGetDirectory }}
+    - name: Create NuGet package for Ekzakt.Utilities.csproj
+      run: dotnet pack ./Ekzakt.Utilities/Ekzakt.Utilities.csproj --configuration Release --output ${{ env.NuGetDirectory }}
 
-    #- name: Create NuGet package for Ekzakt.EmailSender.Smtp.csproj
-    #  run: dotnet pack ./Ekzakt.EmailSender.Smtp/Ekzakt.EmailSender.Smtp.csproj --configuration Release --output ${{ env.NuGetDirectory }}
-
-    - name: Create NuGet packages
-      run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
-      
+    - name: Create NuGet package for Ekzakt.EmailSender.Smtp.csproj
+      run: dotnet pack ./Ekzakt.EmailSender.Smtp/Ekzakt.EmailSender.Smtp.csproj --configuration Release --output ${{ env.NuGetDirectory }}
+  
     # Publish the NuGet package as an artifact, so they can be used in the following jobs
     - uses: actions/upload-artifact@v3
       with:
