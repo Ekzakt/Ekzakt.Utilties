@@ -1,6 +1,8 @@
-﻿namespace Ekzakt.EmailSender.Smtp.Configuration;
+﻿using Ekzakt.EmailSender.Core.Contracts;
 
-public class SmtpSenderOptions
+namespace Ekzakt.EmailSender.Smtp.Configuration;
+
+public class SmtpSenderOptions : IEmailSenderOptions
 {
     public string OptionsName { get; set; } = "SmtpMailOptions";
 

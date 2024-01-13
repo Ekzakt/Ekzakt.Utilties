@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.EmailSender.Smtp.Models;
+﻿namespace Ekzakt.EmailSender.Core.Models;
 
 public class EmailAddress
 {

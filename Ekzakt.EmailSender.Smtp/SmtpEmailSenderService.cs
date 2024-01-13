@@ -1,10 +1,10 @@
-﻿using Ekzakt.EmailSender.Smtp.Contracts;
-using Ekzakt.EmailSender.Smtp.Models;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using MimeKit;
 using MailKit.Net.Smtp;
 using Ekzakt.EmailSender.Smtp.Configuration;
 using Microsoft.Extensions.Configuration;
+using Ekzakt.EmailSender.Core.Models;
+using Ekzakt.EmailSender.Core.Contracts;
 
 namespace Ekzakt.EmailSender.Smtp;
 
@@ -34,7 +34,6 @@ public class SmtpEmailSenderService(
 
         await SendAsync();
     }
-
 
 
 
