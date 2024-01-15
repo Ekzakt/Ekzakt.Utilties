@@ -2,62 +2,58 @@
 using MimeKit;
 using MailKit.Net.Smtp;
 using Ekzakt.EmailSender.Smtp.Configuration;
-using Microsoft.Extensions.Configuration;
 using Ekzakt.EmailSender.Core.Models;
 using Ekzakt.EmailSender.Core.Contracts;
+using Microsoft.Extensions.Options;
 
 namespace Ekzakt.EmailSender.Smtp;
 
 public class SmtpEmailSenderService(
     ILogger<SmtpEmailSenderService> logger, 
-    IConfiguration configuration) : IEmailSenderService
+    IOptions<SmtpEmailSenderOptions> options) : IEmailSenderService
 {
-
     private readonly ILogger<SmtpEmailSenderService> _logger = logger;
-    private SmtpSenderOptions _options;
+    private SmtpEmailSenderOptions _options = options.Value;
+
     private SendEmailRequest _sendEmailRequest = new();
 
 
-    public async Task SendAsync(SendEmailRequest sendRequest, Action<IEmailSenderOptions>? options = null)
+    public async Task<SendEmailResponse> SendAsync(SendEmailRequest sendRequest)
     {
-        if (sendRequest is null)
-        {
-            throw new ArgumentNullException(nameof(SendEmailRequest));
-        }
-
-        if (options is not null)
-        {
-            options(_options);
-        }
-        
         _sendEmailRequest = sendRequest;
-
-        await SendAsync();
+        
+        return await SendAsync();
     }
 
 
 
     #region Helpers
 
-    private async Task SendAsync()
+    private async Task<SendEmailResponse> SendAsync()
     {
         MimeMessage mimeMessage = BuildMimeMessage();
 
         using var smtp = new SmtpClient();
 
-        await smtp.ConnectAsync(
-            _options.Host, 
-            _options.Port
-        );
+        try
+        {
+            await smtp.ConnectAsync(_options.Host, _options.Port);
+            await smtp.AuthenticateAsync(_options.UserName, _options.Password);
 
-        await smtp.AuthenticateAsync(
-            _options.UserName, 
-            _options.Password
-        );
+            var result = await smtp.SendAsync(mimeMessage);
 
-        await smtp.SendAsync(mimeMessage);
+            return new SendEmailResponse { ServerResponse = result };
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message, ex);
 
-        await smtp.DisconnectAsync(true);
+            return new SendEmailResponse { ServerResponse = ex.Message };
+        }
+        finally
+        {
+            await smtp.DisconnectAsync(true);
+        }
     }
 
 
@@ -71,9 +67,9 @@ public class SmtpEmailSenderService(
 
         mimeMessage.Subject = GetEmailSubject(_sendEmailRequest?.Subject);
 
-        mimeMessage.To.AddRange(ConvertFromEmailAddressList(_sendEmailRequest.To));
-        mimeMessage.Cc.AddRange(ConvertFromEmailAddressList(_sendEmailRequest.Cc));
-        mimeMessage.Bcc.AddRange(ConvertFromEmailAddressList(_sendEmailRequest.Bcc));
+        mimeMessage.To.AddRange(ConvertFromEmailAddressList(_sendEmailRequest?.Tos));
+        mimeMessage.Cc.AddRange(ConvertFromEmailAddressList(_sendEmailRequest?.Ccs));
+        mimeMessage.Bcc.AddRange(ConvertFromEmailAddressList(_sendEmailRequest?.Bccs));
 
         mimeMessage.Body = BuildBody();
 
@@ -97,11 +93,11 @@ public class SmtpEmailSenderService(
     }
 
 
-    private InternetAddressList ConvertFromEmailAddressList(List<EmailAddress> emailAddresses)
+    private InternetAddressList ConvertFromEmailAddressList(List<EmailAddress>? emailAddresses)
     {
         InternetAddressList addressesList = new();
 
-        foreach (var emailAddress in emailAddresses)
+        foreach (var emailAddress in emailAddresses ?? new List<EmailAddress>())
         {
             addressesList.Add(new MailboxAddress(emailAddress.Name, emailAddress.Address));
         }

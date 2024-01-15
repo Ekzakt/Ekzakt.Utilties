@@ -2,4 +2,5 @@
 
 public class SendEmailResponse
 {
+    public string? ServerResponse { get; set; }
 }

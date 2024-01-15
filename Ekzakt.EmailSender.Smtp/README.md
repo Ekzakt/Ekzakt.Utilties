@@ -1,5 +1,6 @@
-﻿# Ekzakt.Utilities
-Package for sending emails via an smtp-server.
+﻿# Ekzakt.EmailSender.Smtp
+Package for sending emails via an smtp-server and is merely a small wrapper around
+the [MimeKit](https://github.com/jstedfast/MimeKit) and [MailKit](https://github.com/jstedfast/MailKit) repo.
 
 ## Installation
 

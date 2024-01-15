@@ -2,5 +2,5 @@
 
 public interface IEmailSenderOptions
 {
-    string OptionsName { get; set; }
+    static string OptionsName { get; set; } = string.Empty;
 }
