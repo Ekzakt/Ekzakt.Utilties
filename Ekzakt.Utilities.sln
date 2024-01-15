@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekzakt.Utilities", "Ekzakt.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekzakt.Utilities.Tests", "Ekzakt.Utilities.Tests\Ekzakt.Utilities.Tests.csproj", "{D98CBF82-EF31-4096-81AD-B2402B2A9806}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekzakt.EmailSender.Smtp", "Ekzakt.EmailSender.Smtp\Ekzakt.EmailSender.Smtp.csproj", "{4FF8D6CF-5E98-4F43-95B2-4D6DC5294C70}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ekzakt.EmailSender.Core", "Ekzakt.EmailSender.Core\Ekzakt.EmailSender.Core.csproj", "{A2CD96F8-EC37-47A2-BCAD-8DA576EBFFA9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{D98CBF82-EF31-4096-81AD-B2402B2A9806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D98CBF82-EF31-4096-81AD-B2402B2A9806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98CBF82-EF31-4096-81AD-B2402B2A9806}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FF8D6CF-5E98-4F43-95B2-4D6DC5294C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FF8D6CF-5E98-4F43-95B2-4D6DC5294C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FF8D6CF-5E98-4F43-95B2-4D6DC5294C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FF8D6CF-5E98-4F43-95B2-4D6DC5294C70}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2CD96F8-EC37-47A2-BCAD-8DA576EBFFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2CD96F8-EC37-47A2-BCAD-8DA576EBFFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2CD96F8-EC37-47A2-BCAD-8DA576EBFFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2CD96F8-EC37-47A2-BCAD-8DA576EBFFA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
