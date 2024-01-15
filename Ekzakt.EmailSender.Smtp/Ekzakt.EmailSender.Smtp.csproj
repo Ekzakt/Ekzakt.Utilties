@@ -20,6 +20,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Ekzakt.EmailSender.Core\Ekzakt.EmailSender.Core.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
 		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -50,10 +54,6 @@
 
 	<ItemGroup>
 		<None Include="README.md" Pack="true" PackagePath="" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Ekzakt.EmailSender.Core\Ekzakt.EmailSender.Core.csproj" />
 	</ItemGroup>
 	
 </Project>

@@ -15,11 +15,5 @@ dotnet add package Ekzakt.EmailSender.Smtp
 builder.Services.AddScoped<IEmailSenderService, SmtpEmailSenderService>();
 ```
 
-## Usage
-Import the namespace Ekzakt.EmailSender.Smtp in every class you want to use it.
-``` C#
-import Ekzakt.EmailSender.Smtp
-```
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
