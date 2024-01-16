@@ -36,19 +36,10 @@ jobs:
 
     - name: Update Build Number for Ekzakt.Utilities
       run: sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Ekzakt.Utilities/Ekzakt.Utilities.csproj
-      
-    - name: Update Build Number for Ekzakt.EmailSender.Smtp
-      run: sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Ekzakt.EmailSender.Smtp/Ekzakt.EmailSender.Smtp.csproj
-      
-    - name: Update Build Number for Ekzakt.EmailSender.Core
-      run: sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Ekzakt.EmailSender.Core/Ekzakt.EmailSender.Core.csproj
 
     # Create the NuGet packages in the folder from the environment variable NuGetDirectory
     - name: Create NuGet packages for all projects
       run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
-  
-    # - name: Create NuGet packages
-    #   run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
 
     # Publish the NuGet package as an artifact, so they can be used in the following jobs
     - uses: actions/upload-artifact@v3
