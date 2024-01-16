@@ -9,7 +9,7 @@
 		<Company>Ekzakt</Company>
 		<Version>0.0.0</Version>
 		<Description>Package with helper classes and extension methods for Ekzakt.</Description>
-		<PackageProjectUrl>http://www.ekzakt.be</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/Ekzakt/Ekzakt.EmailSender</PackageProjectUrl>
 		<PackageTags>utilities, ekzakt, helpers, extensions</PackageTags>
 	</PropertyGroup>
 
