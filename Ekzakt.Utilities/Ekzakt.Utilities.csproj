@@ -8,9 +8,9 @@
 		<Authors>Ekzakt</Authors>
 		<Company>Ekzakt</Company>
 		<Version>0.0.0</Version>
-		<Description>Package with helper classes and extension methods for Ekzakt.</Description>
-		<PackageProjectUrl>https://github.com/Ekzakt/Ekzakt.EmailSender</PackageProjectUrl>
-		<PackageTags>utilities, ekzakt, helpers, extensions</PackageTags>
+		<Description>Package with helper classes and extension methods for the Ekzakt ecosystem.</Description>
+		<PackageProjectUrl>https://github.com/Ekzakt/Ekzakt.Utilities</PackageProjectUrl>
+		<PackageTags>utilities, helpers, extensions, ekzakt</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -43,7 +43,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath=""/>
+		<None Include="README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 	
 </Project>
