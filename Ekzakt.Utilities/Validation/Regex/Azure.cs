@@ -19,5 +19,14 @@ public static class Azure
         /// with hyphens not allowed to be consecutive.
         /// </summary>
         public const string CONTAINERNAME = "^[a-z0-9](?:[a-z0-9]|-(?=[a-z0-9])){1,61}[a-z0-9]$";
+
+
+        /// <summary>
+        /// This regex matches Azure blob client names.
+        /// See <see href="https://learn.microsoft.com/en-us/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata">the
+        /// Microsoft documentation</see> for more information.
+        /// </summary>
+        public const string BLOB_CLIENT_NAME = @"^(?!.*[/\\.]$)(?!.*[\\/.]$)(?!.*[\\/.]{2,})([^\x00-\x1F\x7F\""*+,:;<=>?@\[\\\]^`{|}]|\%[0-9a-fA-F]{2}){1,1024}$";
+
     }
 }

@@ -7,7 +7,7 @@
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<Authors>Ekzakt</Authors>
 		<Company>Ekzakt</Company>
-		<Version>0.1.0</Version>
+		<Version>0.2.0</Version>
 		<Description>Package with helper classes and extension methods for the Ekzakt ecosystem.</Description>
 		<PackageProjectUrl>https://github.com/Ekzakt/Ekzakt.Utilities</PackageProjectUrl>
 		<PackageTags>utilities, helpers, extensions, ekzakt</PackageTags>
