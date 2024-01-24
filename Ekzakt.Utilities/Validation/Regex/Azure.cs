@@ -18,7 +18,17 @@ public static class Azure
         /// with a letter or number, containing only letters, numbers, and hyphens, 
         /// with hyphens not allowed to be consecutive.
         /// </summary>
+        [Obsolete("Use CONTAINER_NAME instead.")]
         public const string CONTAINERNAME = "^[a-z0-9](?:[a-z0-9]|-(?=[a-z0-9])){1,61}[a-z0-9]$";
+
+
+        /// <summary>
+        /// This regex matches Azure storage account container names ensuring the
+        /// langth is between 3 and 63 characters long, and starting and ending 
+        /// with a letter or number, containing only letters, numbers, and hyphens, 
+        /// with hyphens not allowed to be consecutive.
+        /// </summary>
+        public const string CONTAINER_NAME = "^[a-z0-9](?:[a-z0-9]|-(?=[a-z0-9])){1,61}[a-z0-9]$";
 
 
         /// <summary>
