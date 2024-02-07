@@ -16,6 +16,7 @@ public static class LongExtensions
     /// <summary>
     /// Formats the given file size (long) in bytes into a human-readable 
     /// string representation with the appropriate unit (Bytes, KB, MB, GB, TB, PB, EB, ZB, YB).
+    /// 
     /// <param name="decimalPlaces"/>
     /// </summary>
     public static string FormatFileSize(this long value, int decimalPlaces = 0)

@@ -14,7 +14,7 @@ namespace Ekzakt.Utilities.Extentions.Tests
             var result1 = value1.FormatFileSize(2);
             var result2 = value2.FormatFileSize(2);
 
-            Assert.IsTrue(result1 == "1,00 KB" && result2 == "15,28 KB");
+            Assert.IsTrue(result1 == "1.00 KB" && result2 == "15.28 KB");
         }
 
 
@@ -27,7 +27,7 @@ namespace Ekzakt.Utilities.Extentions.Tests
             var result1 = value1.FormatFileSize(2);
             var result2 = value2.FormatFileSize(2);
 
-            Assert.IsTrue(result1 == "1,00 MB" && result2 == "1,04 MB");
+            Assert.IsTrue(result1 == "1.00 MB" && result2 == "1.04 MB");
         }
     }
 }
