@@ -7,9 +7,14 @@ public static class DateTimeExtensions
     /// </summary>
     /// <param name="dateTime">The DateTime object to calculate the time elapsed from.</param>
     /// <returns>A string representing the time elapsed since the specified DateTime object.</returns>
-    public static string TimeAgo(this DateTime dateTime)
+    public static string TimeAgo(this DateTime dateTime, bool doNotUserUtc = false)
     {
-        TimeSpan timeSince = DateTime.Now.Subtract(dateTime);
+        TimeSpan timeSince = DateTime.UtcNow.Subtract(dateTime);
+
+        if (doNotUserUtc )
+        {
+            timeSince = DateTime.Now.Subtract(dateTime);
+        }
 
         if (timeSince.TotalSeconds < 10)
         {
