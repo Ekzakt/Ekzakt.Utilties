@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Globalization;
 
 namespace Ekzakt.Utilities.Extentions.Tests
 {
@@ -8,6 +9,8 @@ namespace Ekzakt.Utilities.Extentions.Tests
         [TestMethod()]
         public void FormatFileSizeTest_ShouldReturnKB()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
             long value1 = 1024;
             long value2 = 15645;
 
@@ -21,6 +24,8 @@ namespace Ekzakt.Utilities.Extentions.Tests
         [TestMethod()]
         public void FormatFileSizeTest_ShouldReturnMB()
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
             long value1 = 1048576;
             long value2 = 1085426;
 

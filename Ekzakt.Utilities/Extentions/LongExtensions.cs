@@ -14,11 +14,11 @@ public static class LongExtensions
 
 
     /// <summary>
-    /// Formats the given file size (long) in bytes into a human-readable 
-    /// string representation with the appropriate unit (Bytes, KB, MB, GB, TB, PB, EB, ZB, YB).
-    /// 
-    /// <param name="decimalPlaces"/>
+    /// Formats the specified file size value into a human-readable string representation.
     /// </summary>
+    /// <param name="value">The file size value to format.</param>
+    /// <param name="decimalPlaces">The number of decimal places to include in the formatted string. Default is 0.</param>
+    /// <returns>A string representing the formatted file size.</returns>
     public static string FormatFileSize(this long value, int decimalPlaces = 0)
     {
         var bytes = (decimal)value;
