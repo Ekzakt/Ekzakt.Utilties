@@ -6,6 +6,7 @@ public static class DateTimeExtensions
     /// Returns a string representing the time elapsed since the specified DateTime object.
     /// </summary>
     /// <param name="dateTime">The DateTime object to calculate the time elapsed from.</param>
+    /// <param name="doNotUserUtc"></param>
     /// <returns>A string representing the time elapsed since the specified DateTime object.</returns>
     public static string TimeAgo(this DateTime dateTime, bool doNotUserUtc = false)
     {
