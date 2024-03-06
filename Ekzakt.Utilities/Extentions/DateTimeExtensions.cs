@@ -11,7 +11,7 @@ public static class DateTimeExtensions
     {
         TimeSpan timeSince = DateTime.UtcNow.Subtract(dateTime);
 
-        if (doNotUserUtc )
+        if (doNotUserUtc)
         {
             timeSince = DateTime.Now.Subtract(dateTime);
         }
