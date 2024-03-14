@@ -1,5 +1,9 @@
 ﻿# Ekzakt.Utilities
-This solution contains helper- and extension methods for the Ekzakt ecosystem.
+
+
+## Description
+This repository contains helper- and extension methods for the Ekzakt ecosystem.
+
 
 ## Installation
 Use the NuGet Package Manager and search for Ekzakt.Utilities, or use the dotnet CLI:
@@ -16,3 +20,7 @@ import Ekzakt.Utilities
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Authors
+- [@ekzakt](https://www.github.com/ekzakt)
