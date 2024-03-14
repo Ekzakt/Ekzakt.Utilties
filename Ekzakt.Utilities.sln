@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekzakt.Utilities", "Ekzakt.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ekzakt.Utilities.Tests", "Ekzakt.Utilities.Tests\Ekzakt.Utilities.Tests.csproj", "{D98CBF82-EF31-4096-81AD-B2402B2A9806}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E5868C6A-505B-4651-8B6D-508D7E30B109}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
