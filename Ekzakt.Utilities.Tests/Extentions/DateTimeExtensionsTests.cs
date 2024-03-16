@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ekzakt.Utilities.Extentions.Tests;
+namespace Ekzakt.Utilities.Extensions.Tests;
 
 [TestClass()]
 public class DateTimeExtensionsTests

@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.Utilities.Helpers;
+﻿namespace Ekzakt.Utilities.Extensions;
 
 public static class VersionExtensions
 {

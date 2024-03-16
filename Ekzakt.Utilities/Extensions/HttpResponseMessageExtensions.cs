@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Ekzakt.Utilities.Extentions;
+namespace Ekzakt.Utilities.Extensions;
 
 public static class HttpResponseMessageExtensions
 {

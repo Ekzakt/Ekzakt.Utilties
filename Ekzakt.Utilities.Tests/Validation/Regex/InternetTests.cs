@@ -1,4 +1,4 @@
-﻿using Ekzakt.Utilities.Extentions;
+﻿using Ekzakt.Utilities.Extensions;
 using Ekzakt.Utilities.Validation.Regex;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;

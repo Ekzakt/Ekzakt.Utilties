@@ -1,18 +1,7 @@
-﻿namespace Ekzakt.Utilities.Extentions;
+﻿namespace Ekzakt.Utilities.Extensions;
 
-public static class LongExtensions
+public static class LongExsensions
 {
-    /// <summary>
-    /// Formats the given file size (long) in bytes into a human-readable 
-    /// string representation with the appropriate unit (Bytes, KB, MB, GB, TB, PB, EB, ZB, YB).
-    /// </summary>
-    [Obsolete("Use overload FormatFileSize(int decimalPlaces = 0) instead.")]
-    public static string FormatFileSize(this long value)
-    {
-        return value.FormatFileSize(0);
-    }
-
-
     /// <summary>
     /// Formats the specified file size value into a human-readable string representation.
     /// </summary>

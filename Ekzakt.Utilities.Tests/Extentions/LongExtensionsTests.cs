@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
 
-namespace Ekzakt.Utilities.Extentions.Tests
+namespace Ekzakt.Utilities.Extensions.Tests
 {
     [TestClass()]
     public class LongExtensionsTests

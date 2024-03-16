@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.Utilities.Extentions;
+﻿namespace Ekzakt.Utilities.Extensions;
 
 public static class DateTimeExtensions
 {
