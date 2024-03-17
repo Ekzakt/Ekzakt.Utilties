@@ -4,7 +4,7 @@ public static class StreamHelpers
 {
     /// <summary>
     /// Converts any string into a stream.  
-    /// Note: Don't forget to use Using.
+    /// Note: Don't forget to use using.
     /// </summary>
     /// <param name="value"></param>
     /// <returns>Stream</returns>

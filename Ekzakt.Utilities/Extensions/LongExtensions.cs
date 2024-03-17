@@ -23,6 +23,7 @@ public static class LongExsensions
         }
 
         string formatString = $"{{0:N{decimalPlaces}}} {{1}}";
+
         return string.Format(formatString, bytes, sizeSuffixes[order]);
     }
 }

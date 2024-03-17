@@ -1,5 +1,6 @@
 ﻿namespace Ekzakt.Utilities;
 
+
 public class StringReplacer
 {
     private const string PREFIX = "{{";
@@ -13,7 +14,7 @@ public class StringReplacer
 
     public StringReplacer(Dictionary<string, string> replacements)
     {
-        _replacements = replacements;
+        _replacements = replacements ?? new();
     }
 
 
