@@ -8,21 +8,29 @@ public class StringReplacer
 
     private Dictionary<string, string> _replacements = new();
 
-
     public StringReplacer() { }
-
 
     public StringReplacer(Dictionary<string, string> replacements)
     {
         _replacements = replacements ?? new();
     }
 
-
+    [Obsolete("User AddReplacement instead. This method will be removed in a future version.")]
     public void Add(string key, string value)
     {
         _replacements.Add(key, value);
     }
 
+    public void AddReplacements(string key, string value)
+    {
+        if (_replacements.ContainsKey(key))
+        {
+            _replacements[key] = value;
+            return;
+        }
+
+        _replacements.Add(key, value);
+    }
 
     public string Replace(string textToReplaceIn)
     {
