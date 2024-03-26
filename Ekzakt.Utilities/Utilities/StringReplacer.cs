@@ -2,8 +2,8 @@
 
 public class StringReplacer
 {
-    private const string PREFIX = "{{";
-    private const string SUFFIX = "}}";
+    private const string PREFIX = @"{{";
+    private const string SUFFIX = @"}}";
 
     private Dictionary<string, string> _replacements = new();
 

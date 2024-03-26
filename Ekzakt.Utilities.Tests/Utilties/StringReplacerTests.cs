@@ -1,5 +1,4 @@
-﻿using Ekzakt.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ekzakt.Utilities.Tests
 {
@@ -9,7 +8,7 @@ namespace Ekzakt.Utilities.Tests
         [TestMethod()]
         public void StringReplacerTest_NoReplacementsShouldReturnInput()
         {
-            StringReplacer stringReplacer = new StringReplacer( new Dictionary<string, string>
+            StringReplacer stringReplacer = new StringReplacer(new Dictionary<string, string>
             {
                 { "Replacement", "ValueThatHasBeenReplaced" }
             });
