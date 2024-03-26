@@ -33,11 +33,16 @@ public class StringReplacer
 
     public string Replace(string textToReplaceIn)
     {
+        if (string.IsNullOrEmpty(textToReplaceIn) || _replacements.Count == 0)
+        {
+            return textToReplaceIn;
+        }
+
         var output = textToReplaceIn;
 
         foreach (var replacement in _replacements)
         {
-            output = textToReplaceIn.Replace(
+            output = output.Replace(
                 oldValue: $"{PREFIX}{replacement.Key}{SUFFIX}",
                 newValue: replacement.Value);
         }
