@@ -1,4 +1,4 @@
-﻿namespace Ekzakt.Utilities;
+namespace Ekzakt.Utilities;
 
 public class StringReplacer
 {
@@ -7,7 +7,9 @@ public class StringReplacer
 
     private Dictionary<string, string> _replacements = new();
 
-    public StringReplacer() { }
+    public StringReplacer()
+    { 
+    }
 
     public StringReplacer(Dictionary<string, string> replacements)
     {
