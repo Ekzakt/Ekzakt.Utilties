@@ -7,20 +7,24 @@ public class StringReplacer
 
     private Dictionary<string, string> _replacements = new();
 
+
     public StringReplacer()
     { 
     }
+
 
     public StringReplacer(Dictionary<string, string> replacements)
     {
         _replacements = replacements ?? new();
     }
 
+
     [Obsolete("User AddReplacement instead. This method will be removed in a future version.")]
     public void Add(string key, string value)
     {
         _replacements.Add(key, value);
     }
+
 
     public void AddReplacement(string key, string value)
     {
@@ -32,6 +36,7 @@ public class StringReplacer
 
         _replacements.Add(key, value);
     }
+
 
     public string Replace(string textToReplaceIn)
     {
