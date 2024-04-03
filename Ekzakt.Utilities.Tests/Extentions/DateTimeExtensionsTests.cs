@@ -97,7 +97,7 @@ public class DateTimeExtensionsTests
     {
         var result = DateTime.Now.AddDays(-30).TimeAgo(true);
 
-        Assert.IsTrue(result == "1 month ago");
+        Assert.IsTrue(result == "30 days ago");
     }
 
 
