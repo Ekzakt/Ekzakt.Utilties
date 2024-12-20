@@ -33,4 +33,10 @@ public class StringHelpers
 
         return new string(result.ToArray());
     }
+
+
+    public static string RemoveDuplicateChars(string input)
+    {
+        return new string(input.Distinct().ToArray());
+    }
 }
