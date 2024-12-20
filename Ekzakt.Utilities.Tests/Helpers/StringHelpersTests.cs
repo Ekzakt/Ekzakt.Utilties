@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Ekzakt.Utilities.Helpers;
 
 namespace Ekzakt.Utilities.Helpers.Tests
 {
@@ -11,7 +12,7 @@ namespace Ekzakt.Utilities.Helpers.Tests
             string input = "aabbcc";
             string expected = "abc";
 
-            string actual = StringHelpers.RemoveDuplicateChars(input);
+            string actual = input.RemoveDuplicateChars();
 
             Assert.AreEqual(expected, actual);
         }
