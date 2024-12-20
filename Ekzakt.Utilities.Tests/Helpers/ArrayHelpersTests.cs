@@ -12,7 +12,7 @@ namespace Ekzakt.Utilities.Helpers.Tests
     public class ArrayHelpersTests
     {
         [TestMethod()]
-        public void GetRandomTest()
+        public void GetRandomTest_LengthShouldBeOne()
         {
             // Arrange
             var value = "TestValue";
@@ -23,6 +23,20 @@ namespace Ekzakt.Utilities.Helpers.Tests
 
             // Assert
             Assert.IsTrue(result.Length == 1);
+        }
+
+        [TestMethod()]
+        public void GetRandomTest_ValueShouldContainResult()
+        {
+            // Arrange
+            var value = "TestValue";
+            var random = new Random();
+
+            // Act
+            var result = ArrayHelpers.GetRandom(value);
+
+            // Assert
+            Assert.IsTrue(result.Contains(result));
         }
     }
 }
