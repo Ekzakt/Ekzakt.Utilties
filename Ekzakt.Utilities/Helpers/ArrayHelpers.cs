@@ -25,4 +25,22 @@ public class ArrayHelpers
 
         return values[index];
     }
+
+
+    /// <summary>
+    /// Returns a single character from a given string.
+    /// </summary>
+    /// <param name="value"></param>
+    public static string GetRandom(string value)
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            return string.Empty;
+        }
+        Random rand = new Random();
+
+        int index = rand.Next(value.Length);
+
+        return value[index].ToString();
+    }
 }
