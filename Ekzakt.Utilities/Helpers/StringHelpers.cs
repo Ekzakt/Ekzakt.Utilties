@@ -1,6 +1,6 @@
 ﻿namespace Ekzakt.Utilities.Helpers;
 
-public class StringHelpers
+public static class StringHelpers
 {
     public const string CHARS_NUMERIC = "0123456789";
     public const string CHARS_ALPHABETIC_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

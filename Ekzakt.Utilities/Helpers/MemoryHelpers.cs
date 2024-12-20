@@ -13,10 +13,11 @@ public static class MemoryHelpers
     /// <typeparam name="T"></typeparam>
     /// <param name="obj"></param>
     /// <returns></returns>
-    public static T DeepCopy<T>(this T obj) where T: class
+    public static T DeepCopy<T>(this T obj) where T : class
     {
         var serialized = JsonSerializer.Serialize(obj);
 
-        return JsonSerializer.Deserialize<T>(serialized);
+        return JsonSerializer.Deserialize<T>(serialized) ?? 
+            throw new InvalidOperationException("Deserialization returned null");
     }
 }
