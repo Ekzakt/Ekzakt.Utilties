@@ -1,6 +1,6 @@
 ﻿namespace Ekzakt.Utilities.Helpers;
 
-public class ArrayHelpers
+public static class ArrayHelpers
 {
     /// <summary>
     /// Gets a random string from an array of strings.
@@ -9,7 +9,7 @@ public class ArrayHelpers
     /// <returns>string</returns>
     public static string GetRandom(string[] values)
     {
-        if (!values.Any())
+        if (values.Length == 0)
         {
             return string.Empty;
         }

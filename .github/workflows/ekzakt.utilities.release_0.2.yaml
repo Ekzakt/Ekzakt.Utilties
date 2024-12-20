@@ -8,7 +8,7 @@ on:
       - 'master'     # Run the workflow when pushing to the main branch
   pull_request:
     branches:
-      - '*'          # Run the workflow for all pull requests
+      - 'master'          # Run the workflow for all pull requests
   release:
     types:
       - published    # Run the workflow when a new GitHub release is published
@@ -33,6 +33,8 @@ jobs:
     # Install the .NET SDK indicated in the global.json file
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
 
     - name: Update Build Number for Ekzakt.Utilities
       run: sed -i "s/\(<Version>\([0-9]\+\.\)\{2\}\)\([0-9]\+\)/\1${{github.run_number}}/" ./Ekzakt.Utilities/Ekzakt.Utilities.csproj
@@ -79,6 +81,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
     - name: Run tests
       run: dotnet test --configuration Release
 

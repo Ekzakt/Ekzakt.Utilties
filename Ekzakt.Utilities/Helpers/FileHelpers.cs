@@ -2,7 +2,7 @@
 
 namespace Ekzakt.Utilities.Helpers;
 
-public class FileHelpers
+public static class FileHelpers
 {
     public static string ConvertToSafeRootName(string fileName)
     {
